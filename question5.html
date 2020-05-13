@@ -1,0 +1,49 @@
+<!--Eric Sun-->
+<!--Mr. Campbell-->
+<!--Computer Programming 15 -->
+
+<!doctype html>
+<html>
+	<body>
+		<script type = "text/javascript">
+
+let letter;
+let letterLeng;
+let x;
+let y;
+let print;
+
+let arrayLet = [];
+let arrayCount = [];
+let newvalue=0;
+
+letter = prompt("Enter a string of letters; put 1 to end.");
+letterLeng = (letter.length) - 1;
+
+arrayLet.push(letter.substring(0, 1));
+arrayCount.push(1);
+
+for (x = 1; x < letterLeng; x++) {
+	for (y = 0; y < (arrayLet.length); y++){
+		if (arrayLet[y] == letter.substring(x, x + 1)){
+			arrayCount[y] = arrayCount[y] + 1;
+			newvalue=1;
+			break;			
+		}
+	}	
+	if (newvalue==0){	
+		arrayLet.push(letter.substring(x, x + 1));
+		arrayCount.push(1);				
+	}
+	newvalue=0;
+}
+
+for (y = 0; y < (arrayLet.length); y++){
+	print = (arrayLet[y] + "     " + arrayCount[y]);
+	console.log(print);
+}
+
+
+		</script>
+	</body>
+</html>
